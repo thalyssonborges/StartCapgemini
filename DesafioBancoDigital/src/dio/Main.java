@@ -79,13 +79,13 @@ public class Main {
 					System.out.println(i+" :"+c.cliente.nome);
 					i++;
 				}
-				System.out.println("Selecione o cliente: ");
+				System.out.printf("Selecione o cliente: ");
 				int opcCliente = sc.nextInt();
 				listaContaCorrente.get(opcCliente);
 				
 				boolean opc = true;
 				do { //MENU DE OPERAÇÕES -- CONTA CORRENTE
-					System.out.println("==== MENU DE OPERAÇÕES DA CONTA ====");
+					System.out.println("\n==== MENU DE OPERAÇÕES DA CONTA ====");
 					System.out.println("Selecione uma das opções");
 					System.out.println("1 - Saque");
 					System.out.println("2 - Deposito");
@@ -103,17 +103,17 @@ public class Main {
 						System.out.printf("Valor de Deposito: ");
 						double valor = sc.nextDouble();
 						listaContaCorrente.get(opcCliente).depositar(valor);
-						System.out.println("Deposito Efetuado!");
+						System.out.println("Deposito Efetuado!\n");
 						opc = false;
 					}else if(opcao == 3) { //MENU DE OPERAÇÕES -- CONTA CORRENTE -- { TRANSFERENCIA }
 						System.out.printf("Valor de Transferencia: ");
 						double valor = sc.nextDouble();
-						System.out.printf("Selecione uma conta para transferir: ");
 						i = 0;
 						for (Conta c : listaTodosClientes) {
 							System.out.println(i+": "+c.cliente.nome);
 							i++;
 						}
+						System.out.printf("Selecione uma conta para transferir: ");
 						int opcCliente1 = sc.nextInt();
 						listaContaCorrente.get(opcCliente).transferir(valor, listaTodosClientes.get(opcCliente1));
 						opc = false;
@@ -129,13 +129,13 @@ public class Main {
 					System.out.println(i+" :"+c.cliente.nome);
 					i++;
 				}
-				System.out.println("Selecione o cliente: ");
+				System.out.printf("Selecione o cliente: ");
 				int opcCliente = sc.nextInt();
 				listaContaPoupanca.get(opcCliente);
 				
 				boolean opc = true;
 				do { //MENU DE OPERAÇÕES -- CONTA POUPANÇA
-					System.out.println("==== MENU DE OPERAÇÕES DA CONTA ====");
+					System.out.println("\n==== MENU DE OPERAÇÕES DA CONTA ====");
 					System.out.println("Selecione uma das opções");
 					System.out.println("1 - Saque");
 					System.out.println("2 - Deposito");
@@ -153,17 +153,17 @@ public class Main {
 						System.out.printf("Valor de Deposito: ");
 						double valor = sc.nextDouble();
 						listaContaPoupanca.get(opcCliente).depositar(valor);
-						System.out.println("Deposito Efetuado!");
+						System.out.println("Deposito Efetuado!\n");
 						opc = false;
 					}else if(opcao == 3) { //MENU DE OPERAÇÕES -- CONTA POUPANÇA -- { TRANSFERENCIA }
 						System.out.printf("Valor de Transferencia: ");
 						double valor = sc.nextDouble();
-						System.out.printf("Selecione uma conta para transferir: ");
 						i = 0;
 						for (Conta c : listaTodosClientes) {
 							System.out.println(i+": "+c.cliente.nome);
 							i++;
 						}
+						System.out.printf("Selecione uma conta para transferir: ");
 						int opcCliente1 = sc.nextInt();
 						listaContaPoupanca.get(opcCliente).transferir(valor, listaTodosClientes.get(opcCliente1));
 						opc = false;
@@ -191,7 +191,7 @@ public class Main {
 			c.imprimirExtrato();
 		}
 
-		System.out.println("\n>>>>>  TODOS OS CLIENTES  <<<<<\n");
+		System.out.println(">>>>>  TODOS OS CLIENTES  <<<<<\n");
 		for (Conta c : listaTodosClientes) {
 			c.exibirTodosClientes();
 		}
